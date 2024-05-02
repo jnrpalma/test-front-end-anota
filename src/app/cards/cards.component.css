@@ -1,0 +1,67 @@
+/* src/app/cards/cards.component.css */
+.cards-container {
+  display: flex;
+  flex-direction: row;  /* Alinhamento horizontal */
+  flex-wrap: nowrap;  /* Mantém todos os cartões em uma única linha */
+  justify-content: flex-start;  /* Alinha os cartões ao início */
+  overflow-x: auto;  /* Permite rolagem horizontal se necessário */
+  padding: 0 10px;  /* Espaçamento nas extremidades do container */
+}
+
+.card {
+  position: relative;
+  width: 200px; /* Largura dos cartões */
+  height: 280px; /* Altura fixa para todos os cartões */
+  border: none; /* Removendo a borda para um design mais limpo */
+  margin: 8px 10px; /* Espaçamento uniforme ao redor dos cartões */
+  padding: 0; /* Sem preenchimento interno */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* Sombra mais pronunciada para efeito de elevação */
+  display: flex;
+  flex-direction: column; /* Organiza os itens verticalmente */
+  overflow: hidden; /* Esconde o conteúdo que exceder a área do cartão */
+  background-color: white; /* Fundo branco para maior contraste e limpeza */
+  border-radius: 10px; /* Bordas arredondadas para uma aparência suave */
+  transition: transform 0.3s ease-in-out; /* Transição suave para efeito hover */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+}
+
+img {
+  width: 100%;
+  height: 120px; /* Altura ajustada para as imagens */
+  object-fit: cover; /* Assegura cobertura completa sem distorção */
+  border-bottom: 1px solid #ccc; /* Linha sutil entre a imagem e o texto */
+}
+
+p {
+  margin: 4px; /* Margem consistente para parágrafos */
+  overflow: hidden; /* Oculta texto excedente */
+  text-overflow: ellipsis; /* Elipses para texto não visível */
+  display: -webkit-box;
+  -webkit-line-clamp: 8; /* Limita o texto a três linhas */
+  -webkit-box-orient: vertical;
+  font-size: 14px; /* Ajuste do tamanho da fonte para melhor legibilidade */
+  color: #333; /* Cor mais suave para a descrição */
+}
+
+
+.delete-button {
+  position: absolute;
+  top: -3px; /* Ajuste conforme necessário para mover verticalmente */
+  left: 161px; /* Ajuste conforme necessário para mover horizontalmente */
+  cursor: pointer;
+  color: #c0c0c0;
+  font-size: 18px; /* Tamanho maior para visibilidade */
+  padding: 4px; /* Espaço ao redor do X para facilidade de clique */
+  border-radius: 50%; /* Borda arredondada para visual mais suave */
+  background-color: #ffffff; /* Fundo branco para melhor contraste */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para efeito 3D */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; /* Largura fixa */
+  height: 30px; /* Altura fixa */
+  z-index: 1; /* Assegura que o botão fique acima dos outros elementos */
+}
