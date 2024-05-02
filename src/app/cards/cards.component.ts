@@ -1,8 +1,9 @@
 // src/app/cards/cards.component.ts
 import { Component, OnInit } from '@angular/core';
-import { Card, CardService } from '../card.service';
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from '../search/search.component';
+import { Card } from './interface/card.interface';
+import { CardService } from '../card.service';
 
 @Component({
   selector: 'app-cards',

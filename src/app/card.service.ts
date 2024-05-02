@@ -2,14 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
-
-export interface Card {
-  id: number;
-  title: string;
-  description: string;
-  img: string; 
-  type: number;
-}
+import { Card } from './cards/interface/card.interface';
 
 @Injectable({
   providedIn: 'root'
