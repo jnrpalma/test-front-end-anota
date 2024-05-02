@@ -39,11 +39,11 @@ export class CardsComponent implements OnInit {
 
   getBackgroundColor(type: number): string {
     const colors: { [key: number]: string } = {
-      1: '#BC2C1A', // Rosa claro para Paisagem
-      2: '#134611', // Verde claro para Flor
-      3: '#D81159'  // Amarelo claro para Pizza
+      1: '#BC2C1A', 
+      2: '#134611', 
+      3: '#D81159'  
     };
-    return colors[type] || '#f9f9f9'; // Cor padrão para tipos desconhecidos
+    return colors[type] || '#f9f9f9'; 
   }
 
   onSearchChange(searchValue: string): void {
@@ -56,8 +56,7 @@ export class CardsComponent implements OnInit {
 
   removeCard(index: number): void {
     this.cards.splice(index, 1);
-    this.onSearchChange(this.searchQuery); // Atualiza a lista filtrada também
+    this.onSearchChange(this.searchQuery); 
   }
-
 
 }

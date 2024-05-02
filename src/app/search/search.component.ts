@@ -16,7 +16,7 @@ export class SearchComponent {
   constructor() {}
 
   onInputChange(event: Event): void {
-    const value = (event.target as HTMLInputElement).value; // Acessar o valor do input
+    const value = (event.target as HTMLInputElement).value; 
     this.filterChange.emit(value);
   }
 }

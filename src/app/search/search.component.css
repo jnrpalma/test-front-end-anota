@@ -2,18 +2,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* Mover o input para cima */
+    margin-top: 20px; 
   }
   
   .search-container {
     position: relative;
-    width: 700px; /* Largura aumentada de 200px para 300px */
+    width: 700px; 
   }
   
   .search-input {
     width: 100%;
     padding: 10px;
-    padding-right: 40px; /* Espaço extra à direita para o ícone */
+    padding-right: 40px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;

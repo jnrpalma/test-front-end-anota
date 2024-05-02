@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [ HttpClientModule,RouterOutlet, HeaderComponent, FormsModule,SearchComponent, CardsComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']  // Corrigido styleUrl para styleUrls
+  styleUrls: ['./app.component.css'] 
 })
 export class AppComponent {
 }

@@ -7,7 +7,7 @@ export interface Card {
   id: number;
   title: string;
   description: string;
-  img: string; // Campo de imagem adicionado
+  img: string; 
   type: number;
 }
 
@@ -27,6 +27,6 @@ export class CardService {
 
   private handleError(error: HttpErrorResponse) {
     console.error('An error occurred:', error.error);
-    return throwError(() => new Error('Something bad happened; please try again later.'));
+    return throwError(() => new Error('teste jorge'));
   }
 }
