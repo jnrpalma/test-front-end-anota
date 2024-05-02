@@ -3,7 +3,7 @@
   <div class="cards-container">
     <div *ngFor="let card of filteredCards; let i = index" class="card">
       <div class="delete-button" (click)="removeCard(i)">
-        <i class="fas fa-times"></i>
+        <img src="https://githubanotaai.github.io/frontend-interview-mock-data/assets/close.svg" alt="Delete">
       </div>
       <img [src]="card.img" alt="{{ card.title }}">
       <h3>{{ card.title }}</h3>
