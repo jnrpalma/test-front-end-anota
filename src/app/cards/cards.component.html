@@ -1,12 +1,15 @@
 <!-- src/app/cards/cards.component.html -->
-<div class="cards-container">
-    <div *ngFor="let card of cards; let i = index" class="card">
+<div>
+  <app-search (filterChange)="onSearchChange($event)"></app-search>
+  <div class="cards-container">
+    <div *ngFor="let card of filteredCards; let i = index" class="card">
       <div class="delete-button" (click)="removeCard(i)">
-        <i class="fas fa-times"></i> <!-- Ícone FontAwesome -->
+        <i class="fas fa-times"></i>
       </div>
       <img [src]="card.img" alt="{{ card.title }}">
       <h3>{{ card.title }}</h3>
       <p class="description">{{ card.description }}</p>
+      <div class="card-type" [ngStyle]="{'background-color': getBackgroundColor(card.type)}">{{ getType(card.type) }}</div>
     </div>
   </div>
-  
+</div>

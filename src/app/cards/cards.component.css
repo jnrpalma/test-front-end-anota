@@ -65,3 +65,21 @@ p {
   height: 30px; /* Altura fixa */
   z-index: 1; /* Assegura que o botão fique acima dos outros elementos */
 }
+
+.card-type {
+  position: absolute;
+  top: 95px; /* Posicionado no topo com uma margem para não encostar no canto */
+  right:4px; /* Alinhado à direita com uma margem */
+  color: white; /* Cor do texto branca para maior contraste */
+  font-size: 12px; /* Tamanho de fonte reduzido para ser mais discreto */
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo preto semitransparente para destacar o texto */
+  padding: 3px 6px; /* Redução do espaçamento interno */
+  border-radius: 4px; /* Bordas arredondadas mantidas */
+  text-shadow: 1px 1px 2px black; /* Sombra no texto para melhorar a legibilidade */
+  z-index: 2; /* Mantém o elemento sobre a imagem */
+  transition: background-color 0.3s ease; /* Transição suave do fundo ao interagir */
+}
+
+.card-type:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Escurece o fundo ao passar o mouse */
+}

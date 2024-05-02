@@ -2,24 +2,27 @@
 import { Component, OnInit } from '@angular/core';
 import { Card, CardService } from '../card.service';
 import { CommonModule } from '@angular/common';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SearchComponent],
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit {
   cards: Card[] = [];
+  filteredCards: Card[] = [];
+  searchQuery: string = '';
 
   constructor(private cardService: CardService) { }
 
   ngOnInit() {
     this.cardService.getCards().subscribe({
       next: (cards) => {
-        console.log('Cards received:', cards);
         this.cards = cards;
+        this.filteredCards = cards;
       },
       error: (error) => console.error('Error fetching cards:', error)
     });
@@ -34,7 +37,27 @@ export class CardsComponent implements OnInit {
     return types[type] || 'Desconhecido';
   }
 
-  removeCard(index: number): void {
-    this.cards.splice(index, 1); // Remove o cartão pelo índice
+  getBackgroundColor(type: number): string {
+    const colors: { [key: number]: string } = {
+      1: '#BC2C1A', // Rosa claro para Paisagem
+      2: '#134611', // Verde claro para Flor
+      3: '#D81159'  // Amarelo claro para Pizza
+    };
+    return colors[type] || '#f9f9f9'; // Cor padrão para tipos desconhecidos
   }
+
+  onSearchChange(searchValue: string): void {
+    this.searchQuery = searchValue;
+    this.filteredCards = this.cards.filter(card => 
+      card.title.toLowerCase().includes(searchValue.toLowerCase()) || 
+      card.description.toLowerCase().includes(searchValue.toLowerCase())
+    );
+  }
+
+  removeCard(index: number): void {
+    this.cards.splice(index, 1);
+    this.onSearchChange(this.searchQuery); // Atualiza a lista filtrada também
+  }
+
+
 }

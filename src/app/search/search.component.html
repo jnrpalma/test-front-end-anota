@@ -1,7 +1,8 @@
+<!-- src/app/search/search.component.html -->
 <div class="centered-container">
     <div class="search-container custom-width">
-        <input type="text" placeholder="Buscar..." class="search-input">
-        <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Buscar..." class="search-input" (input)="onInputChange($event)">
+      <i class="fas fa-search search-icon"></i>
     </div>
   </div>
   
